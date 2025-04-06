@@ -1,0 +1,12 @@
+com/github/mirospanacek/ares/model/pojo/AddressHistory.class
+com/github/mirospanacek/ares/controllers/Controller.class
+com/github/mirospanacek/ares/Ares.class
+com/github/mirospanacek/ares/model/pojo/AdditionalData.class
+com/github/mirospanacek/ares/model/pojo/Address.class
+com/github/mirospanacek/ares/model/pojo/Root.class
+com/github/mirospanacek/ares/model/AresClient.class
+module-info.class
+com/github/mirospanacek/ares/model/pojo/RegistrationStatus.class
+com/github/mirospanacek/ares/model/pojo/DeliveryAddress.class
+com/github/mirospanacek/ares/model/pojo/EconomicEntity.class
+com/github/mirospanacek/ares/model/pojo/TradeNameHistory.class

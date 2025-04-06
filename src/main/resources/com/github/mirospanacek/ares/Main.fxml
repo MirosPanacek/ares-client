@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="551.0" prefWidth="491.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.mirospanacek.ares.controllers.Controller">
+	<children>
+		<Button layoutX="388.0" layoutY="53.0" mnemonicParsing="false" onAction="#searchEntity" text="Search" />
+		<Label layoutX="29.0" layoutY="57.0" text="Vyhledej podle ICO:" />
+      <TextField layoutX="172.0" layoutY="53.0" />
+	</children>
+</AnchorPane>

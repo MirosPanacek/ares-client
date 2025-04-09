@@ -17,6 +17,7 @@ public class EconomicEntity {
     @JsonProperty("obchodniJmeno")
     private String tradeName;
 
+    @JsonProperty("sidlo")
     private Address address;
 
     private String legalForm;

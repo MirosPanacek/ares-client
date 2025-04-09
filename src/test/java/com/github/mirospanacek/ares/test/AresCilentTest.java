@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.http.HttpResponse;
 
+import com.github.mirospanacek.ares.model.pojo.Root;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
@@ -15,7 +16,7 @@ public class AresCilentTest{
     private static final Logger LOG = 
             LoggerFactory.getLogger(AresCilentTest.class);
     
-    private String ico = "74807374"; 
+    private String ico = "46981691";
     @Test
     public void buildRequestTest() {
         AresClient client = new AresClient();
@@ -30,5 +31,16 @@ public class AresCilentTest{
         assertThat(response.statusCode()).isEqualTo(200);
         assertThat(response.body()).contains(ico);
         LOG.info(response.body());
+    }
+
+    @Test
+    public void mapToRootTest() throws IOException, InterruptedException, URISyntaxException {
+        AresClient client = new AresClient();
+        HttpResponse<String> response = client.search(ico);
+        Root root = client.getResult(response);
+        LOG.info(response.body());
+        LOG.info(root.getEconomicEntities().getFirst().toString());
+        assertThat(root.getEconomicEntities().size()).isEqualTo(1);
+        assertThat(root.getEconomicEntities().getFirst().toString()).contains("Lužkovice");
     }
 }

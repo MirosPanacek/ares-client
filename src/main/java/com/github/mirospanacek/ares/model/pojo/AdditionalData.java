@@ -1,9 +1,11 @@
 package com.github.mirospanacek.ares.model.pojo;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 import java.util.Objects;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AdditionalData {
     private List<TradeNameHistory> tradeNames;
     private List<AddressHistory> addresses;

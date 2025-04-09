@@ -3,13 +3,19 @@ package com.github.mirospanacek.ares.model.pojo;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Address {
+    @JsonProperty("kodStatu")
     private String countryCode;
+    @JsonProperty("nazevStatu")
     private String countryName;
+    @JsonProperty("kodKraje")
     private int regionCode;
+    @JsonProperty("nazevKraje")
     private String regionName;
+    @JsonProperty("kodOkresu")
     private int districtCode;
     private String districtName;
     private int municipalityCode;

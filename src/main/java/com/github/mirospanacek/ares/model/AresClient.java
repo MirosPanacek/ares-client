@@ -7,13 +7,17 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.github.mirospanacek.ares.model.pojo.Root;
 
 public class AresClient{
 
     private String server = "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/"
             + "ekonomicke-subjekty/vyhledat";
-    private HttpClient client = HttpClient.newHttpClient();
+    private final HttpClient client = HttpClient.newHttpClient();
 
     public AresClient() {
     }
@@ -25,13 +29,16 @@ public class AresClient{
                 HttpResponse.BodyHandlers.ofString());
     }
 
-    public Root getResult(HttpResponse<String> response) {
+    public Root getResult(HttpResponse<String> response) throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JavaTimeModule());
+        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 
-        return new Root();
+        return mapper.readValue(response.body(), Root.class);
     }
 
     public HttpRequest setRequest(String ico) throws URISyntaxException {
-        
+
        return HttpRequest.newBuilder()
                 .uri(new URI(server))
                 .headers("accept", "application/json", "Content-Type",

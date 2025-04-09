@@ -1,7 +1,9 @@
 package com.github.mirospanacek.ares.model.pojo;
 
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.Objects;
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class DeliveryAddress{
 
     private String addressLine1;

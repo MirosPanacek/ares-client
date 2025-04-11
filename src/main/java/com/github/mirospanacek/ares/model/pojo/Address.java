@@ -5,6 +5,10 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The class repsesents registered office of economic entity
+ */
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Address {
     @JsonProperty("kodStatu")
@@ -20,14 +24,20 @@ public class Address {
     private String districtName;
     private int municipalityCode;
     private String municipalityName;
+    @JsonProperty("kodObce")
     private int administrativeDistrictCode;
+    @JsonProperty("nazevObce")
     private String administrativeDistrictName;
     private int cityDistrictCode;
     private String cityDistrictName;
+    @JsonProperty("kodCastiObce")
     private int cityPartCode;
+    @JsonProperty("kodUlice")
     private int streetCode;
     private String cityPartName;
+    @JsonProperty("nazevUlice")
     private String streetName;
+    @JsonProperty("cisloDomovni")
     private int buildingNumber;
     private String addressComplement;
     private int partOfMunicipalityCode;
@@ -35,11 +45,16 @@ public class Address {
     private String orientationLetter;
     private String partOfMunicipalityName;
     private long addressPlaceCode;
-    private int postalCode;
+    @JsonProperty("psc")
+    private String postalCode;
+    @JsonProperty("textovaAdresa")
     private String textualAddress;
+    @JsonProperty("kodAdresnihoMista")
     private String addressNumber;
+    @JsonProperty("standardizaceAdresy")
     private boolean addressStandardized;
     private String postalCodeText;
+    @JsonProperty("typCisloDomovni")
     private int buildingNumberType;
     
     public String getCountryCode() {
@@ -134,7 +149,7 @@ public class Address {
         return addressPlaceCode;
     }
     
-    public int getPostalCode() {
+    public String getPostalCode() {
         return postalCode;
     }
     
@@ -250,7 +265,7 @@ public class Address {
         this.addressPlaceCode = addressPlaceCode;
     }
     
-    public void setPostalCode(int postalCode) {
+    public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
     

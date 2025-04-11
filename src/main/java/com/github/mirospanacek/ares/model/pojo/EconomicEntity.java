@@ -19,10 +19,12 @@ public class EconomicEntity {
 
     @JsonProperty("sidlo")
     private Address address;
-
+    @JsonProperty("pravniForma")
     private String legalForm;
+    @JsonProperty("financniUrad")
     private String taxOffice;
 
+    @JsonProperty("datumVzniku")
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate establishmentDate;
 
@@ -32,6 +34,7 @@ public class EconomicEntity {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate updateDate;
 
+    @JsonProperty("dic")
     private String vatNumber;
 
     @JsonProperty("icoId")
@@ -41,6 +44,7 @@ public class EconomicEntity {
 
     private RegistrationStatus registrationStatus;
 
+    @JsonProperty("primarniZdroj")
     private String primarySource;
 
     @JsonProperty("dalsiUdaje")

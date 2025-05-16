@@ -13,6 +13,9 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.github.mirospanacek.ares.model.pojo.Root;
 
+/**
+ * Handle communication with ARES server
+ */
 public class AresClient{
 
     private String server = "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/"

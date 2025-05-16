@@ -11,5 +11,5 @@ module com.github.mirospanacek.ares {
     exports com.github.mirospanacek.ares;
     opens com.github.mirospanacek.ares.controllers to javafx.fxml;
     opens com.github.mirospanacek.ares.model to com.fasterxml.jackson.databind, com.fasterxml.jackson.datatype.jsr310;
-    opens com.github.mirospanacek.ares.model.pojo to com.fasterxml.jackson.databind;
+    opens com.github.mirospanacek.ares.model.pojo to com.fasterxml.jackson.databind, javafx.base;
 }

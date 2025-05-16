@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * The class represents root of response from Ares system
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Root {
 

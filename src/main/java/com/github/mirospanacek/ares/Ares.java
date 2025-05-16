@@ -7,17 +7,17 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Ares extends Application{
-    private String resourcesPath = "/com/github/mirospanacek/ares/";
+    private static final String RESOURCES_PATH = "/com/github/mirospanacek/ares/";
     public void ares() {
         
     }
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource(resourcesPath +"Main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource(RESOURCES_PATH +"Main.fxml"));
         Scene screne = new Scene(root);
         screne.getStylesheets()
-                .add(getClass().getResource(resourcesPath + "application.css").toExternalForm());
+                .add(getClass().getResource(RESOURCES_PATH + "application.css").toExternalForm());
         stage.setScene(screne);
         stage.show();
     }

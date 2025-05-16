@@ -22,8 +22,8 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.http.HttpResponse;
 
-public class Controller{
-    private static final Logger LOG = 
+public class Controller {
+    private static final Logger LOG =
             LoggerFactory.getLogger(Controller.class);
 
     @FXML
@@ -37,13 +37,14 @@ public class Controller{
 
     @FXML
     private void initialize() {
+        LOG.info("INIT!!!");
         initTable();
     }
-    
-    @FXML
-    public void searchEntity(ActionEvent event) {
-        AresClient client = new AresClient();
 
+    @FXML
+    public void searchEntity(ActionEvent event) throws IOException,InterruptedException, URISyntaxException {
+        AresClient client = new AresClient();
+        LOG.info("GO!!!");
         String input = searchFieldIco.getText();
         try {
 
@@ -54,8 +55,8 @@ public class Controller{
             LOG.info("DATA: {}", root.getEconomicEntities().getFirst().toString());
             tableView.setItems(data);
             LOG.info("Zadaná hodnota: " + input);
-        } catch (NumberFormatException | IOException | InterruptedException | URISyntaxException e) {
-            LOG.error("Neplatné číslo!");
+        } catch (NumberFormatException e) {
+            LOG.error(e.getMessage());
         }
         LOG.info("Search");
     }
@@ -69,6 +70,6 @@ public class Controller{
         tableView.getColumns().addAll(ico, name);
         dataContainer.getChildren().add(tableView);
     }
-    
-    
+
+
 }

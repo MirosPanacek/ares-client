@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.http.HttpResponse;
 
-import com.github.mirospanacek.ares.model.pojo.Root;
+import com.github.mirospanacek.ares.model.pojo.RootOfRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
@@ -37,7 +37,7 @@ public class AresCilentTest{
     public void mapToRootTest() throws IOException, InterruptedException, URISyntaxException {
         AresClient client = new AresClient();
         HttpResponse<String> response = client.search(ico);
-        Root root = client.getResult(response);
+        RootOfRequest root = client.getResult(response);
         LOG.info(response.body());
         LOG.info(root.getEconomicEntities().getFirst().toString());
         assertThat(root.getEconomicEntities().size()).isEqualTo(1);

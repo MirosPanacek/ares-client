@@ -1,6 +1,5 @@
 package com.github.mirospanacek.ares;
 
-import com.github.mirospanacek.ares.controllers.Controller;
 import javafx.fxml.FXMLLoader;
 import javafx.application.Application;
 import javafx.scene.Parent;

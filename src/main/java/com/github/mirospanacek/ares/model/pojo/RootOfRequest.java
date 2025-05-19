@@ -10,7 +10,7 @@ import java.util.Objects;
  * The class represents root of response from Ares system
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Root {
+public class RootOfRequest {
 
     @JsonProperty("pocetCelkem")
     private int totalCount;
@@ -53,7 +53,7 @@ public class Root {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Root other = (Root) obj;
+        RootOfRequest other = (RootOfRequest) obj;
         return Objects.equals(economicEntities, other.economicEntities)
                 && totalCount == other.totalCount;
     }

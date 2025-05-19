@@ -10,6 +10,7 @@ module com.github.mirospanacek.ares {
     requires jdk.crypto.ec;
     requires com.fasterxml.jackson.datatype.jsr310;
     requires com.fasterxml.jackson.databind;
+    requires java.desktop;
 
     exports com.github.mirospanacek.ares;
     opens com.github.mirospanacek.ares.controllers to javafx.fxml;

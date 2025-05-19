@@ -11,7 +11,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.github.mirospanacek.ares.model.pojo.Root;
+import com.github.mirospanacek.ares.model.pojo.RootOfRequest;
 
 /**
  * Handle communication with ARES server
@@ -32,12 +32,12 @@ public class AresClient{
                 HttpResponse.BodyHandlers.ofString());
     }
 
-    public Root getResult(HttpResponse<String> response) throws JsonProcessingException {
+    public RootOfRequest getResult(HttpResponse<String> response) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new JavaTimeModule());
         mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 
-        return mapper.readValue(response.body(), Root.class);
+        return mapper.readValue(response.body(), RootOfRequest.class);
     }
 
     public HttpRequest setRequest(String ico) throws URISyntaxException {
